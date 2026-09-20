@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sofiia Strykova — Mobile Preview</title>
+  <style>
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:32px; background:#e7e9ed; font-family:system-ui,sans-serif; }
+    .preview { width:min(390px,100%); }
+    .label { margin:0 0 12px; color:#5f646c; font-size:14px; text-align:center; }
+    .phone { width:100%; height:min(844px,calc(100vh - 92px)); min-height:620px; overflow:hidden; border:10px solid #18191c; border-radius:38px; background:#f7f8fa; box-shadow:0 24px 60px rgba(24,25,28,.2); }
+    iframe { display:block; width:100%; height:100%; border:0; background:#f7f8fa; }
+    @media (max-width:460px) { body { padding:0; background:#f7f8fa; } .preview { width:100%; } .label { display:none; } .phone { height:100vh; min-height:0; border:0; border-radius:0; box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <main class="preview">
+    <p class="label">Mobile preview · 390 px</p>
+    <div class="phone">
+      <iframe src="./index.html" title="Mobile preview of Sofiia Strykova’s portfolio"></iframe>
+    </div>
+  </main>
+</body>
+</html>
