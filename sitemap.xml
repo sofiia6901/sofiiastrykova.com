@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://sofiiastrykova.com/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <image:image><image:loc>https://sofiiastrykova.com/sofiia-profile-photo-2026.jpg</image:loc></image:image>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
