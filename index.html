@@ -165,8 +165,10 @@
     .personal-project-copy { padding:28px 4px 12px; }
     .famq-preview-link { display:block; text-decoration:none; }
     .famq-cover-link { width:100%; aspect-ratio:1 / 1; overflow:hidden; border-radius:var(--radius); background:#194538; }
-    .famq-board { display:block; width:100%; height:100%; object-fit:contain; background:#194538; border-radius:var(--radius); transition:transform .16s ease-out; }
-    .famq-cover-link:hover .famq-board,.famq-cover-link:focus-visible .famq-board { transform:scale(1.015); }
+    .famq-cover-link .famq-board { width:100%; height:100%; object-fit:contain; }
+    .famq-board { display:block; width:100%; aspect-ratio:1 / 1; object-fit:contain; background:#194538; border-radius:var(--radius); transition:transform .16s ease-out,box-shadow .16s ease-out; }
+    .famq-preview-link:hover .famq-board, .famq-preview-link:focus-visible .famq-board { transform:translateY(-3px); box-shadow:0 12px 28px rgba(36,43,36,.10); }
+    .famq-cover-link:hover .famq-board,.famq-cover-link:focus-visible .famq-board { transform:scale(1.015); box-shadow:none; }
     .famq-preview-link:focus-visible { outline:2px solid var(--accent); outline-offset:4px; border-radius:var(--radius); }
     .personal-project h3 a { text-decoration:inherit; }
     .personal-project-copy p:last-child { margin-bottom:0; }
@@ -187,6 +189,17 @@
     .client-grid article:hover .client-heading-link::after,.client-grid article:focus-within .client-heading-link::after { transform:translate(2px,-2px); }
     html.js .reveal { opacity:0; transform:translateY(8px); transition:opacity .28s ease-out,transform .28s cubic-bezier(.2,.8,.2,1); }
     html.js .reveal.visible { opacity:1; transform:none; }
+    @keyframes enter-page { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    html.js header .brand,html.js header nav a,html.js .about-copy > *,html.js .about .headshot { animation:enter-page .55s cubic-bezier(.2,.8,.2,1) both; }
+    html.js header .brand { animation-delay:.04s; }
+    html.js header nav a:nth-child(1) { animation-delay:.08s; }
+    html.js header nav a:nth-child(2) { animation-delay:.14s; }
+    html.js header nav a:nth-child(3) { animation-delay:.20s; }
+    html.js header nav a:nth-child(4) { animation-delay:.26s; }
+    html.js .about-copy > :nth-child(1) { animation-delay:.08s; }
+    html.js .about-copy > :nth-child(2) { animation-delay:.16s; }
+    html.js .about-copy > :nth-child(3) { animation-delay:.24s; }
+    html.js .about .headshot { animation-delay:.2s; }
     html.js .projects .client-grid article, html.js .impact .impact-card { opacity:0; transform:translateY(7px); transition:opacity .24s ease-out,transform .24s cubic-bezier(.2,.8,.2,1); }
     html.js .projects.visible .client-grid article, html.js .impact.visible .impact-card { opacity:1; transform:none; }
     html.js .projects.visible .client-grid article:nth-child(2), html.js .impact.visible .impact-card:nth-child(2) { transition-delay:.1s; }
@@ -194,20 +207,34 @@
     html.js .projects.visible .client-grid article:nth-child(4), html.js .impact.visible .impact-card:nth-child(4) { transition-delay:.3s; }
     .client-grid .client-logo { transition:transform .16s ease-out; }
     .client-grid article:hover .client-logo,.client-grid article:focus-within .client-logo { transform:scale(1.045); }
+    .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:transform .24s cubic-bezier(.2,.8,.2,1); }
+    .client-grid article:hover .nissan-project-cover,.client-grid article:focus-within .nissan-project-cover,
+    .client-grid article:hover .infiniti-project-cover,.client-grid article:focus-within .infiniti-project-cover,
+    .client-grid article:hover .hilton-project-cover,.client-grid article:focus-within .hilton-project-cover,
+    .client-grid article:hover .arf-project-cover,.client-grid article:focus-within .arf-project-cover { transform:scale(1.035); }
     .headshot { transition:transform .18s ease-out,box-shadow .18s ease-out; }
     .headshot:hover { transform:translateY(-3px); box-shadow:0 16px 34px rgba(24,25,28,.12); }
     @media (prefers-reduced-motion:reduce) {
       html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
-      .client-grid article,.client-grid article .client-card,.client-heading-link::after { transition:none!important; }
+      html.js header .brand,html.js header nav a,html.js .about-copy > *,html.js .about .headshot { animation:none!important; }
+      .client-grid article,.client-grid article .client-card,.client-heading-link::after,.nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:none!important; }
+      .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transform:none!important; }
     }
-    .client-card--arf,.client-card--arf:hover { background:#432723; }
+    .client-card--arf,.client-card--arf:hover { background:#faf7f4; }
+    .client-grid .client-card--arf { aspect-ratio:2870 / 1531; min-height:0; padding:0; overflow:hidden; }
+    .arf-project-cover { display:block; width:100%; height:100%; object-fit:cover; border-radius:inherit; }
     .client-card--arf .client-logo { filter:brightness(0) invert(1); }
     .client-card--arf .client-market { color:#fff; }
-    .client-card--hilton,.client-card--hilton:hover { background:#002f61; }
-    .client-card--hilton .client-logo { filter:brightness(0) invert(1); }
+    .client-card--hilton,.client-card--hilton:hover { background:#fff; }
+    .client-grid .client-card--hilton { aspect-ratio:2874 / 1477; min-height:0; padding:0; overflow:hidden; }
+    .hilton-project-cover { display:block; width:100%; height:100%; object-fit:cover; border-radius:inherit; }
     .client-card--hilton .client-market { color:#fff; }
     .client-card--nissan,.client-card--nissan:hover { background:#c3002f; }
+    .client-card--nissan { aspect-ratio:2.25 / 1; min-height:0; padding:0; overflow:hidden; }
+    .nissan-project-cover { display:block; width:100%; height:100%; object-fit:cover; border-radius:inherit; }
     .client-card--infiniti,.client-card--infiniti:hover { background:#020b24; }
+    .client-card--infiniti { aspect-ratio:2.25 / 1; min-height:0; padding:0; overflow:hidden; }
+    .infiniti-project-cover { display:block; width:100%; height:100%; object-fit:cover; border-radius:inherit; }
     .client-card--famq { background:#20221f; }
     .famq-logo { color:#fafaf7; font-size:3.75rem; font-weight:600; line-height:1; letter-spacing:-.07em; }
     .famq-logo span { color:#b8d65b; }
@@ -306,7 +333,7 @@
     @media (prefers-reduced-motion:reduce) {
       html.js .projects .client-grid article,html.js .impact .impact-card { opacity:1; transform:none; transition:none!important; }
       .client-grid .client-logo,.headshot,.famq-board { transition:none!important; }
-      .headshot:hover,.famq-cover-link:hover .famq-board { transform:none; }
+      .headshot:hover,.famq-preview-link:hover .famq-board,.famq-cover-link:focus-visible .famq-board { transform:none; box-shadow:none; }
     }
   </style>
 </head>
@@ -323,10 +350,10 @@
       <section class="about" id="about">
         <div class="about-copy"><h1>Thoughtful design.<br>A human touch<span class="intro-dot">.</span></h1><p class="intro-greeting">Hi! I’m Sofiia 👋</p>
         <p>I design complex, high-consideration digital experiences. Through research, systems thinking, and cross-functional collaboration, I turn ambiguity into clear product direction and intuitive customer journeys. I guide design from problem framing through delivery, aligning user needs with business goals. My background in linguistics and beauty shaped how I work with people: listening closely, understanding individual needs, and building trust through attention and care. Outside of work, you’ll find me skiing and hiking in the Rockies.</p></div>
-        <img class="headshot" src="sofiia-profile-photo-2026.jpg" width="839" height="1024" alt="Portrait of Sofiia Strykova">
+        <img class="headshot" src="https://sofiiastrykova.com/sofiia-profile-photo-2026.jpg" width="839" height="1024" alt="Portrait of Sofiia Strykova">
       </section>
       <section class="personal-projects reveal" id="personal-projects" aria-labelledby="personal-projects-title">
-        <div class="section-head"><h2 id="personal-projects-title">Independent Work</h2></div>
+        <div class="section-head"><h2 id="personal-projects-title">Independent Product Work</h2></div>
         <div class="passion-grid">
           
           <article class="personal-project" aria-labelledby="famq-title">
@@ -339,28 +366,28 @@
         <div class="section-head"><h2>Selected Work</h2></div>
         <div class="client-grid">
           <article aria-labelledby="nissan-projects-title">
-            <div class="client-card client-card--nissan"><img class="client-logo" src="nissan-logo.svg" alt="Nissan" width="210" height="110"></div>
+            <div class="client-card client-card--nissan"><img class="nissan-project-cover" src="nissan-project-cover.svg" alt="Nissan 2027 Z vehicle page featuring a green sports car"></div>
             <div class="client-projects">
               <h3 id="nissan-projects-title"><a class="client-heading-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)">Nissan USA</a></h3>
               <p>Designing intuitive vehicle discovery and shopping experiences across Nissan’s configurator, payment estimator, e-commerce platform, owner portal, and digital campaigns.</p>
             </div>
           </article>
           <article aria-labelledby="infiniti-projects-title">
-            <div class="client-card client-card--infiniti"><img class="client-logo" src="infiniti-logo.png" alt="INFINITI" width="210" height="110"></div>
+            <div class="client-card client-card--infiniti"><img class="infiniti-project-cover" src="infiniti-project-cover.svg" alt="INFINITI Experience page showing a driver seated in a vehicle"></div>
             <div class="client-projects">
               <h3 id="infiniti-projects-title"><a class="client-heading-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)">INFINITI USA</a></h3>
             <p>Designing premium digital experiences that help customers explore and compare luxury vehicles through Experience MyINFINITI and competitive compare.</p>
             </div>
           </article>
           <article aria-labelledby="hilton-projects-title">
-            <div class="client-card client-card--hilton"><img class="client-logo" src="hilton-logo.png" alt="Hilton Hotels &amp; Resorts" width="210" height="110"></div>
+            <div class="client-card client-card--hilton"><img class="hilton-project-cover" src="hilton-project-cover.svg" alt="Hilton Honors website showing its rewards program and hotel search experience"></div>
             <div class="client-projects">
               <h3 id="hilton-projects-title"><a class="client-heading-link" href="https://www.hilton.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hilton Honors (opens in a new tab)">Hilton Honors</a></h3>
               <p>Making Hilton Honors benefits easier to compare across Member, Silver, Gold, Diamond, and Diamond Reserve so guests understand each tier’s value.</p>
             </div>
           </article>
           <article aria-labelledby="arf-projects-title">
-            <div class="client-card client-card--arf"><img class="client-logo" src="arf-logo.png" alt="Animal Rescue Foundation" width="210" height="110"></div>
+            <div class="client-card client-card--arf"><img class="arf-project-cover" src="arf-project-cover.svg" alt="Animal Rescue Foundation website showing adoptable animals"></div>
             <div class="client-projects">
               <h3 id="arf-projects-title"><a class="client-heading-link" href="https://arf.ab.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit ARF (opens in a new tab)">ARF</a></h3>
               <p>I brought my passion for animal welfare to ARF, Alberta’s oldest grassroots rescue foundation, using UX to spotlight its impact and make getting involved easier.</p>
@@ -420,7 +447,7 @@
           <li><h3><a class="certificate-link" href="https://www.coursera.org/account/accomplishments/verify/TRHU2QJTYULU" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">Foundations of User Experience (UX) Design</a></h3><p>Google</p></li>
           <li><h3><a class="certificate-link" href="https://www.coursera.org/account/accomplishments/specialization/certificate/B3WSLD363Y23" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">Graphic Design Specialization</a></h3><p>California Institute of the Arts</p></li>
           <li><h3><a class="certificate-link" href="https://www.coursera.org/account/accomplishments/specialization/certificate/JKJEWZZ8PRQ7" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">UI / UX Design Specialization</a></h3><p>California Institute of the Arts</p></li>
-          <li><h3>Bachelor’s Degree with Honours in Linguistics</h3><p>Dnipro University of Technology</p></li>
+          <li><h3>Honours Bachelor’s Degree in Linguistics</h3><p>Dnipro University of Technology</p></li>
         </ul>
       </section>
     </main>
