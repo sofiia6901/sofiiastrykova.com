@@ -164,9 +164,9 @@
     .personal-project h3 { display:inline-block; font-size:1.125rem; letter-spacing:-.01em; margin-bottom:16px; text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:2px; text-underline-offset:6px; }
     .personal-project-copy { padding:28px 4px 12px; }
     .famq-preview-link { display:block; text-decoration:none; }
-    .famq-cover-link { width:100%; aspect-ratio:1 / 1; overflow:hidden; border-radius:var(--radius); background:#194538; }
-    .famq-cover-link .famq-board { width:100%; height:100%; object-fit:contain; }
-    .famq-board { display:block; width:100%; aspect-ratio:1 / 1; object-fit:contain; background:#194538; border-radius:var(--radius); transition:transform .16s ease-out,box-shadow .16s ease-out; }
+    .famq-cover-link { width:100%; aspect-ratio:2.25 / 1; overflow:hidden; border-radius:var(--radius); background:#194538; }
+    .famq-cover-link .famq-board { width:100%; height:100%; object-fit:cover; object-position:center 35%; }
+    .famq-board { display:block; width:100%; height:100%; object-fit:cover; object-position:center 35%; background:#194538; border-radius:var(--radius); transition:transform .16s ease-out,box-shadow .16s ease-out; }
     .famq-preview-link:hover .famq-board, .famq-preview-link:focus-visible .famq-board { transform:translateY(-3px); box-shadow:0 12px 28px rgba(36,43,36,.10); }
     .famq-cover-link:hover .famq-board,.famq-cover-link:focus-visible .famq-board { transform:scale(1.015); box-shadow:none; }
     .famq-preview-link:focus-visible { outline:2px solid var(--accent); outline-offset:4px; border-radius:var(--radius); }
@@ -189,17 +189,8 @@
     .client-grid article:hover .client-heading-link::after,.client-grid article:focus-within .client-heading-link::after { transform:translate(2px,-2px); }
     html.js .reveal { opacity:0; transform:translateY(8px); transition:opacity .28s ease-out,transform .28s cubic-bezier(.2,.8,.2,1); }
     html.js .reveal.visible { opacity:1; transform:none; }
-    @keyframes enter-page { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-    html.js header .brand,html.js header nav a,html.js .about-copy > *,html.js .about .headshot { animation:enter-page .55s cubic-bezier(.2,.8,.2,1) both; }
-    html.js header .brand { animation-delay:.04s; }
-    html.js header nav a:nth-child(1) { animation-delay:.08s; }
-    html.js header nav a:nth-child(2) { animation-delay:.14s; }
-    html.js header nav a:nth-child(3) { animation-delay:.20s; }
-    html.js header nav a:nth-child(4) { animation-delay:.26s; }
-    html.js .about-copy > :nth-child(1) { animation-delay:.08s; }
-    html.js .about-copy > :nth-child(2) { animation-delay:.16s; }
-    html.js .about-copy > :nth-child(3) { animation-delay:.24s; }
-    html.js .about .headshot { animation-delay:.2s; }
+    @keyframes text-fade-in { from { opacity:0; } to { opacity:1; } }
+    html.js body :is(h1,h2,h3,p,a,li,button,span,summary,figcaption,strong,small) { animation:text-fade-in .5s ease-out both; }
     html.js .projects .client-grid article, html.js .impact .impact-card { opacity:0; transform:translateY(7px); transition:opacity .24s ease-out,transform .24s cubic-bezier(.2,.8,.2,1); }
     html.js .projects.visible .client-grid article, html.js .impact.visible .impact-card { opacity:1; transform:none; }
     html.js .projects.visible .client-grid article:nth-child(2), html.js .impact.visible .impact-card:nth-child(2) { transition-delay:.1s; }
@@ -216,7 +207,7 @@
     .headshot:hover { transform:translateY(-3px); box-shadow:0 16px 34px rgba(24,25,28,.12); }
     @media (prefers-reduced-motion:reduce) {
       html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
-      html.js header .brand,html.js header nav a,html.js .about-copy > *,html.js .about .headshot { animation:none!important; }
+      html.js body :is(h1,h2,h3,p,a,li,button,span,summary,figcaption,strong,small) { animation:none!important; }
       .client-grid article,.client-grid article .client-card,.client-heading-link::after,.nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:none!important; }
       .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transform:none!important; }
     }
@@ -357,7 +348,7 @@
         <div class="passion-grid">
           
           <article class="personal-project" aria-labelledby="famq-title">
-            <a class="famq-preview-link famq-cover-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/Turn-Screenshots-Into-Designs?fullscreen=1&t=bTJJHrtKSGfm1Xkf-1&code-node-id=0-6" target="_blank" rel="noopener noreferrer" aria-label="Open FamQ in Figma (opens in a new tab)"><img class="famq-board" src="famq-asset.png" width="3255" height="2574" alt="FamQ family organizer app shown on two smartphone screens"></a>
+          <a class="famq-preview-link famq-cover-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/Turn-Screenshots-Into-Designs?fullscreen=1&t=bTJJHrtKSGfm1Xkf-1&code-node-id=0-6" target="_blank" rel="noopener noreferrer" aria-label="Open FamQ in Figma (opens in a new tab)"><img class="famq-board" src="famq-hand-phone.svg" width="1800" height="971" alt="Hand holding a smartphone showing the FamQ family organizer app"></a>
             <div class="personal-project-copy"><h3 id="famq-title"><a class="famq-preview-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/Turn-Screenshots-Into-Designs?fullscreen=1&t=bTJJHrtKSGfm1Xkf-1&code-node-id=0-6" target="_blank" rel="noopener noreferrer">FamQ <span aria-hidden="true">↗</span></a></h3><p>Designing an AI-powered family organizer that reduces mental load by turning schedules, responsibilities, and routines into clear, timely actions.</p></div>
           </article>
         </div>
