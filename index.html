@@ -89,7 +89,7 @@
     .wrap { width:min(1080px,calc(100% - 64px)); margin:auto; }
     header { display:flex; align-items:center; justify-content:space-between; min-height:104px; gap:24px; }
     .brand.editorial-wordmark { display:inline-flex; align-items:baseline; gap:.2em; flex-shrink:0; white-space:nowrap; font-family:var(--font-body); font-size:2rem; font-weight:600; line-height:1.2; letter-spacing:-.065em; padding:4px 0 6px; text-decoration:none; }
-    .wordmark-dot { display:inline-block; width:.19em; height:.19em; margin-left:.09em; border-radius:50%; background:var(--accent); font-size:inherit; vertical-align:baseline; }
+    .wordmark-dot { display:inline-block; width:.19em; height:.19em; margin-left:.09em; border-radius:50%; background:var(--accent); font-size:inherit; vertical-align:baseline; animation:accent-dot-pop .7s cubic-bezier(.2,.8,.2,1) .12s both; }
     nav { display:flex; gap:28px; align-items:center; }
     nav a { font-size:1rem; font-weight:400; text-decoration:none; }
     nav a:hover { text-decoration:underline; text-decoration-color:var(--accent); }
@@ -106,7 +106,7 @@
     .about { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr); gap:72px; align-items:center; padding:var(--section-space) 0; }
     .about h1 { margin-bottom:24px; font-size:clamp(2.5rem,4.5vw,3.5rem); line-height:1.1; letter-spacing:-.045em; }
     .about .intro-greeting { color:var(--ink); font-size:1.125rem; font-weight:500; margin-bottom:20px; }
-    .intro-dot { color:var(--accent); }
+    .intro-dot { display:inline-block; color:var(--accent); transform-origin:center; animation:accent-dot-pop .7s cubic-bezier(.2,.8,.2,1) .28s both; }
     .about p { font-size:1.0625rem; line-height:1.8; max-width:56ch; }
     .about .location { font-weight:500; color:var(--ink); }
     .headshot { display:block; width:100%; max-width:360px; height:auto; aspect-ratio:1; object-fit:cover; object-position:center top; border-radius:var(--radius); justify-self:end; }
@@ -191,6 +191,7 @@
     html.js .reveal.visible { opacity:1; transform:none; }
     html.js .scroll-fade { opacity:0; transform:translateY(6px); transition:opacity .36s ease-out,transform .36s cubic-bezier(.2,.8,.2,1); }
     html.js .scroll-fade.visible { opacity:1; transform:none; }
+    @keyframes accent-dot-pop { 0% { transform:scale(.65); opacity:.55; } 65% { transform:scale(1.45); opacity:1; } 100% { transform:scale(1); opacity:1; } }
     html.js .projects .client-grid article, html.js .impact .impact-card { opacity:0; transform:translateY(7px); transition:opacity .24s ease-out,transform .24s cubic-bezier(.2,.8,.2,1); }
     html.js .projects.visible .client-grid article, html.js .impact.visible .impact-card { opacity:1; transform:none; }
     html.js .projects.visible .client-grid article:nth-child(2), html.js .impact.visible .impact-card:nth-child(2) { transition-delay:.1s; }
@@ -208,6 +209,7 @@
     @media (prefers-reduced-motion:reduce) {
       html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
       html.js .scroll-fade,html.js .scroll-fade.visible { opacity:1; transform:none; transition:none!important; }
+      .wordmark-dot,.intro-dot { animation:none!important; }
       .client-grid article,.client-grid article .client-card,.client-heading-link::after,.nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:none!important; }
       .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transform:none!important; }
     }
