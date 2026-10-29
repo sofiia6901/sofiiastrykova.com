@@ -89,7 +89,7 @@
     .wrap { width:min(1080px,calc(100% - 64px)); margin:auto; }
     header { display:flex; align-items:center; justify-content:space-between; min-height:104px; gap:24px; }
     .brand.editorial-wordmark { display:inline-flex; align-items:baseline; gap:.2em; flex-shrink:0; white-space:nowrap; font-family:var(--font-body); font-size:2rem; font-weight:600; line-height:1.2; letter-spacing:-.065em; padding:4px 0 6px; text-decoration:none; }
-    .wordmark-dot { display:inline-block; width:.19em; height:.19em; margin-left:.09em; border-radius:50%; background:var(--accent); font-size:inherit; vertical-align:baseline; animation:accent-dot-pop .7s cubic-bezier(.2,.8,.2,1) .12s both; }
+    .wordmark-dot { display:inline-block; width:.19em; height:.19em; margin-left:.09em; border-radius:50%; background:var(--accent); font-size:inherit; vertical-align:baseline;  }
     nav { display:flex; gap:28px; align-items:center; }
     nav a { font-size:1rem; font-weight:400; text-decoration:none; }
     nav a:hover { text-decoration:underline; text-decoration-color:var(--accent); }
@@ -106,7 +106,9 @@
     .about { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr); gap:72px; align-items:center; padding:var(--section-space) 0; }
     .about h1 { margin-bottom:24px; font-size:clamp(2.5rem,4.5vw,3.5rem); line-height:1.1; letter-spacing:-.045em; }
     .about .intro-greeting { color:var(--ink); font-size:1.125rem; font-weight:500; margin-bottom:20px; }
-    .intro-dot { display:inline-block; color:var(--accent); transform-origin:center; animation:accent-dot-pop .7s cubic-bezier(.2,.8,.2,1) .28s both; }
+    .headline-dot { display:inline-block; color:var(--accent); transform-origin:center; animation:accent-dot-pop .7s cubic-bezier(.2,.8,.2,1) both; }
+    .headline-dot--first { color:var(--ink); }
+    .headline-dot--second { animation-delay:1s; }
     .about p { font-size:1.0625rem; line-height:1.8; max-width:56ch; }
     .about .location { font-weight:500; color:var(--ink); }
     .headshot { display:block; width:100%; max-width:360px; height:auto; aspect-ratio:1; object-fit:cover; object-position:center top; border-radius:var(--radius); justify-self:end; }
@@ -209,7 +211,7 @@
     @media (prefers-reduced-motion:reduce) {
       html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
       html.js .scroll-fade,html.js .scroll-fade.visible { opacity:1; transform:none; transition:none!important; }
-      .wordmark-dot,.intro-dot { animation:none!important; }
+      .wordmark-dot,.headline-dot { animation:none!important; }
       .client-grid article,.client-grid article .client-card,.client-heading-link::after,.nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:none!important; }
       .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transform:none!important; }
     }
@@ -341,7 +343,7 @@
     </header>
     <main id="top">
       <section class="about" id="about">
-        <div class="about-copy"><h1>Thoughtful design.<br>A human touch<span class="intro-dot">.</span></h1><p class="intro-greeting">Hi! I’m Sofiia 👋</p>
+        <div class="about-copy"><h1>Thoughtful design<span class="headline-dot headline-dot--first">.</span><br>A human touch<span class="headline-dot headline-dot--second">.</span></h1><p class="intro-greeting">Hi! I’m Sofiia 👋</p>
         <p>I design complex, high-consideration digital experiences. Through research, systems thinking, and cross-functional collaboration, I turn ambiguity into clear product direction and intuitive customer journeys. I guide design from problem framing through delivery, aligning user needs with business goals. My background in linguistics and beauty shaped how I work with people: listening closely, understanding individual needs, and building trust through attention and care. Outside of work, you’ll find me skiing and hiking in the Rockies.</p></div>
         <img class="headshot" src="https://sofiiastrykova.com/sofiia-profile-photo-2026.jpg" width="839" height="1024" alt="Portrait of Sofiia Strykova">
       </section>
