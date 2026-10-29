@@ -163,6 +163,11 @@
     .personal-project-mark span { color:var(--accent); }
     .personal-project h3 { display:inline-block; font-size:1.125rem; letter-spacing:-.01em; margin-bottom:16px; text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:2px; text-underline-offset:6px; }
     .personal-project-copy { padding:28px 4px 12px; }
+    .famq-preview-link { display:block; text-decoration:none; }
+    .famq-preview-link .client-card { transition:transform .16s ease-out, box-shadow .16s ease-out; }
+    .famq-preview-link:hover .client-card, .famq-preview-link:focus-visible .client-card { transform:translateY(-3px); box-shadow:0 12px 28px rgba(36,43,36,.10); }
+    .famq-preview-link:focus-visible { outline:2px solid var(--accent); outline-offset:4px; border-radius:var(--radius); }
+    .personal-project h3 a { text-decoration:inherit; }
     .personal-project-copy p:last-child { margin-bottom:0; }
     @media (max-width:760px) { .passion-grid { grid-template-columns:1fr; } .personal-project { width:100%; } .personal-project-visual { height:170px; } }
     .skills-tools { border-bottom:1px solid var(--line); }
@@ -171,6 +176,29 @@
     .client-card { min-height:190px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; background:var(--card); border-radius:var(--radius); text-decoration:none; transition:background .2s ease; }
     .client-heading-link { text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:2px; text-underline-offset:6px; }
     .client-heading-link:hover { text-decoration:underline; text-decoration-color:var(--accent); }
+
+    /* Preview: subtle, accessible project interaction */
+    .client-grid article { border-radius:var(--radius); transition:transform .22s ease; }
+    .client-grid article:hover,.client-grid article:focus-within { transform:translateY(-3px); }
+    .client-grid article .client-card { transition:background .2s ease,box-shadow .22s ease; }
+    .client-grid article:hover .client-card,.client-grid article:focus-within .client-card { box-shadow:0 12px 26px rgba(24,25,28,.14); }
+    .client-heading-link::after { content:" ↗"; display:inline-block; color:var(--accent); transition:transform .2s ease; }
+    .client-grid article:hover .client-heading-link::after,.client-grid article:focus-within .client-heading-link::after { transform:translate(2px,-2px); }
+    html.js .reveal { opacity:0; transform:translateY(8px); transition:opacity .28s ease-out,transform .28s cubic-bezier(.2,.8,.2,1); }
+    html.js .reveal.visible { opacity:1; transform:none; }
+    html.js .projects .client-grid article, html.js .impact .impact-card { opacity:0; transform:translateY(7px); transition:opacity .24s ease-out,transform .24s cubic-bezier(.2,.8,.2,1); }
+    html.js .projects.visible .client-grid article, html.js .impact.visible .impact-card { opacity:1; transform:none; }
+    html.js .projects.visible .client-grid article:nth-child(2), html.js .impact.visible .impact-card:nth-child(2) { transition-delay:.1s; }
+    html.js .projects.visible .client-grid article:nth-child(3), html.js .impact.visible .impact-card:nth-child(3) { transition-delay:.2s; }
+    html.js .projects.visible .client-grid article:nth-child(4), html.js .impact.visible .impact-card:nth-child(4) { transition-delay:.3s; }
+    .client-grid .client-logo { transition:transform .16s ease-out; }
+    .client-grid article:hover .client-logo,.client-grid article:focus-within .client-logo { transform:scale(1.045); }
+    .headshot { transition:transform .18s ease-out,box-shadow .18s ease-out; }
+    .headshot:hover { transform:translateY(-3px); box-shadow:0 16px 34px rgba(24,25,28,.12); }
+    @media (prefers-reduced-motion:reduce) {
+      html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
+      .client-grid article,.client-grid article .client-card,.client-heading-link::after { transition:none!important; }
+    }
     .client-card--arf,.client-card--arf:hover { background:#432723; }
     .client-card--arf .client-logo { filter:brightness(0) invert(1); }
     .client-card--arf .client-market { color:#fff; }
@@ -274,6 +302,11 @@
       .contact-icon { width:52px; height:52px; }
     }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } a { transition:none!important; } }
+    @media (prefers-reduced-motion:reduce) {
+      html.js .projects .client-grid article,html.js .impact .impact-card { opacity:1; transform:none; transition:none!important; }
+      .client-grid .client-logo,.headshot,.famq-preview-link .client-card { transition:none!important; }
+      .headshot:hover,.famq-preview-link:hover .client-card { transform:none; box-shadow:none; }
+    }
   </style>
 </head>
 <body>
@@ -287,20 +320,21 @@
     </header>
     <main id="top">
       <section class="about" id="about">
-        <div class="about-copy"><h1>Thoughtful design.<br>A human touch<span class="intro-dot">.</span></h1><p>I design complex, high-consideration digital experiences. Through research, systems thinking, and cross-functional collaboration, I turn ambiguity into clear product direction and intuitive customer journeys. I guide design from problem framing through delivery, aligning user needs with business goals.</p><p>My background in linguistics and beauty shaped how I work with people: listening closely, understanding individual needs, and building trust through attention and care. Outside of work, you’ll find me skiing and hiking in the Rockies.</p></div>
+        <div class="about-copy"><h1>Thoughtful design.<br>A human touch<span class="intro-dot">.</span></h1><p class="intro-greeting">Hi! I’m Sofiia 👋</p>
+        <p>I design complex, high-consideration digital experiences. Through research, systems thinking, and cross-functional collaboration, I turn ambiguity into clear product direction and intuitive customer journeys. I guide design from problem framing through delivery, aligning user needs with business goals. My background in linguistics and beauty shaped how I work with people: listening closely, understanding individual needs, and building trust through attention and care. Outside of work, you’ll find me skiing and hiking in the Rockies.</p></div>
         <img class="headshot" src="sofiia-profile-photo-2026.jpg" width="839" height="1024" alt="Portrait of Sofiia Strykova">
       </section>
-      <section class="personal-projects" id="personal-projects" aria-labelledby="personal-projects-title">
+      <section class="personal-projects reveal" id="personal-projects" aria-labelledby="personal-projects-title">
         <div class="section-head"><h2 id="personal-projects-title">Independent Work</h2></div>
         <div class="passion-grid">
           
           <article class="personal-project" aria-labelledby="famq-title">
-            <div class="client-card client-card--famq" role="img" aria-label="FamQ logo"><span class="famq-logo" aria-hidden="true">Fam<span>Q.</span></span></div>
-            <div class="personal-project-copy"><h3 id="famq-title">FamQ</h3><p>Designing an AI-powered family organizer that reduces mental load by turning schedules, responsibilities, and routines into clear, timely actions.</p></div>
+            <a class="famq-preview-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/Turn-Screenshots-Into-Designs?fullscreen=1&t=bTJJHrtKSGfm1Xkf-1&code-node-id=0-6" target="_blank" rel="noopener noreferrer" aria-label="Open FamQ in Figma (opens in a new tab)"><div class="client-card client-card--famq" role="img" aria-label="FamQ logo"><span class="famq-logo" aria-hidden="true">Fam<span>Q.</span></span></div></a>
+            <div class="personal-project-copy"><h3 id="famq-title"><a class="famq-preview-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/Turn-Screenshots-Into-Designs?fullscreen=1&t=bTJJHrtKSGfm1Xkf-1&code-node-id=0-6" target="_blank" rel="noopener noreferrer">FamQ <span aria-hidden="true">↗</span></a></h3><p>Designing an AI-powered family organizer that reduces mental load by turning schedules, responsibilities, and routines into clear, timely actions.</p></div>
           </article>
         </div>
       </section>
-      <section class="projects" id="work">
+      <section class="projects reveal" id="work">
         <div class="section-head"><h2>Selected Work</h2></div>
         <div class="client-grid">
           <article aria-labelledby="nissan-projects-title">
@@ -334,7 +368,7 @@
         </div>
         <p class="nda-note">Selected professional work is presented at a high level to respect confidentiality agreements.</p>
       </section>
-      <section class="skills-tools" id="skills" aria-labelledby="skills-title">
+      <section class="skills-tools reveal" id="skills" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills &amp; Tools</h2>
         <div class="expertise-grid">
           <div>
@@ -360,7 +394,7 @@
           </div>
         </div>
       </section>
-      <section class="impact" id="impact" aria-labelledby="impact-title">
+      <section class="impact reveal" id="impact" aria-labelledby="impact-title">
         <h2 id="impact-title">Recognition &amp; Mentorship</h2>
         <div class="impact-grid">
           <article class="impact-card">
@@ -371,9 +405,13 @@
             <h3><a href="https://haskayne.ucalgary.ca/research-and-faculty/academic-areas/marketing" target="_blank" rel="noopener noreferrer" aria-label="Mark-a-Thon at the University of Calgary (opens in a new tab)">Mark-a-Thon · University of Calgary</a></h3>
             <p>Mentored University of Calgary marketing students, offering UX guidance and feedback as they developed client pitches.</p>
           </article>
+          <article class="impact-card">
+            <h3>ADPList · UX Design Mentor</h3>
+            <p>Starting October 2026, mentoring designers as they grow their UX practice and navigate their careers.</p>
+          </article>
         </div>
       </section>
-      <section class="education" id="education" aria-labelledby="education-title">
+      <section class="education reveal" id="education" aria-labelledby="education-title">
         <h2 id="education-title">Education</h2>
         <ul class="education-list">
           <li><h3><a class="certificate-link" href="ideo-u-ai-design-thinking.png" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">AI × Design Thinking</a></h3><p>IDEO U</p></li>
@@ -381,7 +419,7 @@
           <li><h3><a class="certificate-link" href="https://www.coursera.org/account/accomplishments/verify/TRHU2QJTYULU" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">Foundations of User Experience (UX) Design</a></h3><p>Google</p></li>
           <li><h3><a class="certificate-link" href="https://www.coursera.org/account/accomplishments/specialization/certificate/B3WSLD363Y23" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">Graphic Design Specialization</a></h3><p>California Institute of the Arts</p></li>
           <li><h3><a class="certificate-link" href="https://www.coursera.org/account/accomplishments/specialization/certificate/JKJEWZZ8PRQ7" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">UI / UX Design Specialization</a></h3><p>California Institute of the Arts</p></li>
-          <li><h3>Bachelor’s Degree in Linguistics</h3><p>Dnipro University of Technology</p></li>
+          <li><h3>Bachelor’s Degree with Honours in Linguistics</h3><p>Dnipro University of Technology</p></li>
         </ul>
       </section>
     </main>
@@ -408,8 +446,17 @@
     });
     navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.documentElement.classList.add('js');
+    const revealItems = document.querySelectorAll('.reveal');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      }), { threshold: .12, rootMargin: '0px 0px -32px 0px' });
+      revealItems.forEach(el => observer.observe(el));
+    } else {
+      revealItems.forEach(el => el.classList.add('visible'));
+    }
   </script>
 </body>
 </html>
