@@ -186,6 +186,8 @@
     .client-grid article { border-radius:var(--radius); transition:transform .22s ease; }
     .client-grid article:hover,.client-grid article:focus-within { transform:translateY(-3px); }
     .client-grid article .client-card { transition:background .2s ease,box-shadow .22s ease; }
+    .project-cover-link { display:block; width:100%; height:100%; overflow:hidden; border-radius:inherit; }
+    .project-cover-link:focus-visible { outline:3px solid var(--ink); outline-offset:-4px; }
     .client-grid article:hover .client-card,.client-grid article:focus-within .client-card { box-shadow:0 12px 26px rgba(24,25,28,.14); }
     .client-heading-link::after { content:" ↗"; display:inline-block; color:var(--accent); transition:transform .2s ease; }
     .client-grid article:hover .client-heading-link::after,.client-grid article:focus-within .client-heading-link::after { transform:translate(2px,-2px); }
@@ -361,28 +363,28 @@
         <div class="section-head"><h2>Selected Work</h2></div>
         <div class="client-grid">
           <article aria-labelledby="nissan-projects-title">
-            <div class="client-card client-card--nissan"><img class="nissan-project-cover" src="nissan-project-cover.svg" alt="Nissan 2027 Z vehicle page featuring a green sports car"></div>
+            <div class="client-card client-card--nissan"><a class="project-cover-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)"><img class="nissan-project-cover" src="nissan-project-cover.svg" alt=""></a></div>
             <div class="client-projects">
               <h3 id="nissan-projects-title"><a class="client-heading-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)">Nissan USA</a></h3>
               <p>Designing intuitive vehicle discovery and shopping experiences across Nissan’s configurator, payment estimator, e-commerce platform, owner portal, and digital campaigns.</p>
             </div>
           </article>
           <article aria-labelledby="infiniti-projects-title">
-            <div class="client-card client-card--infiniti"><img class="infiniti-project-cover" src="infiniti-project-cover.svg" alt="INFINITI Experience page showing a driver seated in a vehicle"></div>
+            <div class="client-card client-card--infiniti"><a class="project-cover-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)"><img class="infiniti-project-cover" src="infiniti-project-cover.svg" alt=""></a></div>
             <div class="client-projects">
               <h3 id="infiniti-projects-title"><a class="client-heading-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)">INFINITI USA</a></h3>
             <p>Designing premium digital experiences that help customers explore and compare luxury vehicles through Experience MyINFINITI and competitive compare.</p>
             </div>
           </article>
           <article aria-labelledby="hilton-projects-title">
-            <div class="client-card client-card--hilton"><img class="hilton-project-cover" src="hilton-project-cover.svg" alt="Hilton Honors website showing its rewards program and hotel search experience"></div>
+            <div class="client-card client-card--hilton"><a class="project-cover-link" href="https://www.hilton.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hilton Honors (opens in a new tab)"><img class="hilton-project-cover" src="hilton-project-cover.svg" alt=""></a></div>
             <div class="client-projects">
               <h3 id="hilton-projects-title"><a class="client-heading-link" href="https://www.hilton.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hilton Honors (opens in a new tab)">Hilton Honors</a></h3>
               <p>Making Hilton Honors benefits easier to compare across Member, Silver, Gold, Diamond, and Diamond Reserve so guests understand each tier’s value.</p>
             </div>
           </article>
           <article aria-labelledby="arf-projects-title">
-            <div class="client-card client-card--arf"><img class="arf-project-cover" src="arf-project-cover.svg" alt="Animal Rescue Foundation website showing adoptable animals"></div>
+            <div class="client-card client-card--arf"><a class="project-cover-link" href="https://arf.ab.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit ARF (opens in a new tab)"><img class="arf-project-cover" src="arf-project-cover.svg" alt=""></a></div>
             <div class="client-projects">
               <h3 id="arf-projects-title"><a class="client-heading-link" href="https://arf.ab.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit ARF (opens in a new tab)">ARF</a></h3>
               <p>I brought my passion for animal welfare to ARF, Alberta’s oldest grassroots rescue foundation, using UX to spotlight its impact and make getting involved easier.</p>
