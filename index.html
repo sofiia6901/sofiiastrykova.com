@@ -189,8 +189,8 @@
     .client-grid article:hover .client-heading-link::after,.client-grid article:focus-within .client-heading-link::after { transform:translate(2px,-2px); }
     html.js .reveal { opacity:0; transform:translateY(8px); transition:opacity .28s ease-out,transform .28s cubic-bezier(.2,.8,.2,1); }
     html.js .reveal.visible { opacity:1; transform:none; }
-    @keyframes text-fade-in { from { opacity:0; } to { opacity:1; } }
-    html.js body :is(h1,h2,h3,p,a,li,button,span,summary,figcaption,strong,small) { animation:text-fade-in .5s ease-out both; }
+    html.js .scroll-fade { opacity:0; transform:translateY(6px); transition:opacity .36s ease-out,transform .36s cubic-bezier(.2,.8,.2,1); }
+    html.js .scroll-fade.visible { opacity:1; transform:none; }
     html.js .projects .client-grid article, html.js .impact .impact-card { opacity:0; transform:translateY(7px); transition:opacity .24s ease-out,transform .24s cubic-bezier(.2,.8,.2,1); }
     html.js .projects.visible .client-grid article, html.js .impact.visible .impact-card { opacity:1; transform:none; }
     html.js .projects.visible .client-grid article:nth-child(2), html.js .impact.visible .impact-card:nth-child(2) { transition-delay:.1s; }
@@ -207,7 +207,7 @@
     .headshot:hover { transform:translateY(-3px); box-shadow:0 16px 34px rgba(24,25,28,.12); }
     @media (prefers-reduced-motion:reduce) {
       html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
-      html.js body :is(h1,h2,h3,p,a,li,button,span,summary,figcaption,strong,small) { animation:none!important; }
+      html.js .scroll-fade,html.js .scroll-fade.visible { opacity:1; transform:none; transition:none!important; }
       .client-grid article,.client-grid article .client-card,.client-heading-link::after,.nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:none!important; }
       .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transform:none!important; }
     }
@@ -466,7 +466,9 @@
     navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
     document.documentElement.classList.add('js');
-    const revealItems = document.querySelectorAll('.reveal');
+    const textItems = document.querySelectorAll('main h1,main h2,main h3,main p,main li,main button,main summary,main figcaption,footer h2,footer p');
+    textItems.forEach(el => el.classList.add('scroll-fade'));
+    const revealItems = document.querySelectorAll('.reveal,.scroll-fade');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => entries.forEach(entry => {
