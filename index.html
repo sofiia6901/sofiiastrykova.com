@@ -89,8 +89,7 @@
     .wrap { width:min(1080px,calc(100% - 64px)); margin:auto; }
     header { display:flex; align-items:center; justify-content:space-between; min-height:104px; gap:24px; }
     .brand.editorial-wordmark { display:inline-flex; align-items:baseline; gap:.2em; flex-shrink:0; white-space:nowrap; font-family:var(--font-body); font-size:2rem; font-weight:600; line-height:1.2; letter-spacing:-.065em; padding:4px 0 6px; text-decoration:none; }
-    .wordmark-dot { display:inline-block; width:.19em; height:.19em; margin-left:.09em; border-radius:50%; background:var(--accent); font-size:inherit; vertical-align:baseline; transition:transform .24s cubic-bezier(.2,.8,.2,1); transform-origin:center; }
-    .brand:hover .wordmark-dot,.brand:focus-visible .wordmark-dot { transform:scale(2); }
+    .wordmark-dot { display:inline-block; width:.19em; height:.19em; margin-left:.09em; border-radius:50%; background:var(--accent); font-size:inherit; vertical-align:baseline; }
     nav { display:flex; gap:28px; align-items:center; }
     nav a { font-size:1rem; font-weight:400; text-decoration:none; }
     nav a:hover { text-decoration:underline; text-decoration-color:var(--accent); }
@@ -108,8 +107,8 @@
     .about h1 { margin-bottom:24px; font-size:clamp(2.5rem,4.5vw,3.5rem); line-height:1.1; letter-spacing:-.045em; }
     .about .intro-greeting { color:var(--ink); font-size:1.125rem; font-weight:500; margin-bottom:20px; }
     .headline-dot { display:inline-block; color:var(--accent); transform-origin:center; transition:transform .24s cubic-bezier(.2,.8,.2,1); }
-    .about h1:hover .headline-dot,.about h1:focus-within .headline-dot { animation:headline-dot-pop .28s cubic-bezier(.2,.8,.2,1) both; }
-    .about h1:hover .headline-dot--second,.about h1:focus-within .headline-dot--second { animation-delay:1s; }
+    .about h1.dot-pop .headline-dot { animation:headline-dot-pop .42s cubic-bezier(.2,.8,.2,1) both; }
+    .about h1.dot-pop .headline-dot--second { animation-delay:1s; }
     .about p { font-size:1.0625rem; line-height:1.8; max-width:56ch; }
     .about .location { font-weight:500; color:var(--ink); }
     .headshot { display:block; width:100%; max-width:360px; height:auto; aspect-ratio:1; object-fit:cover; object-position:center top; border-radius:50%; justify-self:end; }
@@ -220,7 +219,6 @@
     .personal-project:hover .famq-board,.personal-project:focus-within .famq-board { transform:scale(1.05); }
     .headshot { transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease; }
     .headshot:hover { transform:scale(1.045); box-shadow:0 16px 34px rgba(24,25,28,.12); }
-    .brand.scroll-motion .wordmark-dot { animation:headline-dot-pop .42s cubic-bezier(.2,.8,.2,1) both; }
     .about h1.scroll-motion .headline-dot { animation:headline-dot-pop .42s cubic-bezier(.2,.8,.2,1) both; }
     .about h1.scroll-motion .headline-dot--second { animation-delay:1s; }
     .client-grid article.scroll-motion { transform:translateY(-3px); }
@@ -231,8 +229,6 @@
     .famq-cover-link.scroll-motion .famq-board { transform:scale(1.05); }
     .headshot.scroll-motion { transform:scale(1.045); box-shadow:0 16px 34px rgba(24,25,28,.12); }
     @media (hover:none),(pointer:coarse) {
-      .brand:hover:not(.scroll-motion) .wordmark-dot { transform:none; }
-      .about h1:hover:not(.scroll-motion) .headline-dot { animation:none; }
       .client-grid article:hover:not(.scroll-motion),.personal-project:hover:not(:focus-within) { transform:none; }
       .client-grid article:hover:not(.scroll-motion) .client-card { box-shadow:none; }
       .client-grid article:hover:not(.scroll-motion) .client-logo { transform:none; }
@@ -248,7 +244,7 @@
       html.js .reveal,html.js .reveal.visible { opacity:1; transform:none; transition:none; }
       html.js .scroll-fade,html.js .scroll-fade.visible { opacity:1; transform:none; transition:none!important; }
       .headline-dot { animation:none!important; }
-      .brand:hover .wordmark-dot,.brand:focus-visible .wordmark-dot,.headshot.scroll-motion { transform:none!important; }
+      .headshot.scroll-motion { transform:none!important; }
       .client-grid article,.personal-project,.client-grid article .client-card,.famq-cover-link,.famq-board,.nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transition:none!important; }
       .nissan-project-cover,.infiniti-project-cover,.hilton-project-cover,.arf-project-cover { transform:none!important; }
     }
@@ -499,6 +495,9 @@
     textItems.forEach(el => el.classList.add('scroll-fade'));
     const revealItems = document.querySelectorAll('.reveal,.scroll-fade');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const touchMotion = window.matchMedia('(hover:none), (pointer:coarse)').matches;
+    const headline = document.querySelector('.about h1');
+    if (!reduceMotion && !touchMotion && headline) requestAnimationFrame(() => headline.classList.add('dot-pop'));
     if (!reduceMotion && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -507,7 +506,7 @@
     } else {
       revealItems.forEach(el => el.classList.add('visible'));
     }
-    if (window.matchMedia('(hover:none), (pointer:coarse)').matches && !reduceMotion && 'IntersectionObserver' in window) {
+    if (touchMotion && !reduceMotion && 'IntersectionObserver' in window) {
       const motionTargets = document.querySelectorAll('.brand,.about h1,.headshot,.famq-cover-link,.client-grid article');
       const motionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
         entry.target.classList.toggle('scroll-motion', entry.isIntersecting);
