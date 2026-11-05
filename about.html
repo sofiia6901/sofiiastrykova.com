@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Sofiia Strykova, a Calgary-based UX Designer who brings research, systems thinking, and a human perspective to complex digital experiences.">
+  <title>About Sofiia Strykova | UX Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="sofiia-favicon-clean.svg?v=4">
+  <style>
+    :root { --ink:#111; --muted:#111; --accent:#ff6242; --font-body:"Poppins","Century Gothic","Avenir Next",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:var(--font-body); line-height:1.75; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-underline-offset:6px; }
+    a:focus-visible,button:focus-visible { outline:2px solid var(--ink); outline-offset:5px; }
+    .wrap { width:min(1080px,calc(100% - 64px)); margin:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; min-height:104px; gap:24px; }
+    .brand { display:inline-flex; flex-direction:column; gap:.3rem; flex-shrink:0; white-space:nowrap; text-decoration:none; }
+    .wordmark-primary,.wordmark-secondary { color:#000; font-family:Inter,"Helvetica Neue",Arial,sans-serif; }
+    .wordmark-primary { font-size:2rem; font-weight:600; line-height:.85; letter-spacing:-.065em; }
+    .wordmark-secondary { margin-left:.14em; font-size:.72rem; line-height:1; letter-spacing:.46em; }
+    nav { display:flex; gap:28px; align-items:center; }
+    nav a { font-size:1rem; text-decoration:none; }
+    nav a:hover { text-decoration:underline; text-decoration-color:var(--accent); }
+    h1 { max-width:14ch; margin:0 0 28px; font-size:clamp(2.5rem,4.5vw,3.5rem); line-height:1.1; letter-spacing:-.045em; font-weight:500; }
+    p { color:var(--muted); margin:0 0 20px; font-size:1.0625rem; line-height:1.8; }
+    .about { min-height:calc(100vh - 104px); display:grid; grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr); gap:72px; align-items:center; padding:4rem 0; }
+    .headshot { display:block; width:100%; max-width:360px; height:auto; aspect-ratio:1; object-fit:cover; object-position:center top; border-radius:50%; justify-self:end; }
+    .skills-education { padding:0 0 5rem; border-top:1px solid #e5e5e5; }
+    .skills-education > h2 { margin:40px 0 28px; font-size:clamp(1.75rem,3vw,2.25rem); line-height:1.3; letter-spacing:-.025em; font-weight:500; }
+    .expertise-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:64px; }
+    .expertise-grid h3 { margin:0 0 16px; font-size:1.125rem; font-weight:500; }
+    .section-label { padding-left:14px; border-left:3px solid var(--accent); }
+    .expertise-list,.education-list { list-style:none; margin:0; padding:0; }
+    .expertise-list li,.education-list li { margin:0 0 18px; }
+    .expertise-list strong { display:block; color:var(--ink); font-weight:500; }
+    .expertise-list span,.education-list p { display:block; margin:2px 0 0; color:var(--muted); font-size:.96rem; }
+    .education-list h3 { margin:0; font-size:1rem; font-weight:500; }
+    .education-list a { text-decoration-color:#c8c8c8; }
+    .lets-chat { padding:0 0 5rem; border-top:1px solid #e5e5e5; }
+    .lets-chat h2 { margin:40px 0 12px; font-size:clamp(1.75rem,3vw,2.25rem); line-height:1.3; letter-spacing:-.025em; font-weight:500; }
+    .lets-chat p { margin-bottom:20px; }
+    .chat-links { display:flex; flex-wrap:wrap; gap:12px; }
+    .chat-link { display:inline-block; padding:10px 20px; border:1px solid var(--ink); border-radius:999px; background:#fff; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .chat-link:hover { background:var(--ink); color:#fff; }
+    .chat-primary-actions { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:40px; padding:22px 0 0; border-top:1px solid #e5e5e5; }
+    .chat-primary-actions a { text-decoration:none; font-size:1rem; }
+    .chat-primary-actions a:hover { text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:5px; }
+    .contact-form { width:min(100%,680px); margin:28px 0 0; display:grid; gap:16px; text-align:left; }
+    .contact-form label { display:grid; gap:6px; color:var(--ink); font-size:.9375rem; }
+    .contact-form input,.contact-form textarea { width:100%; padding:12px 14px; border:1px solid #d8d8d8; border-radius:8px; background:#fff; color:var(--ink); font:inherit; }
+    .contact-form textarea { min-height:140px; resize:vertical; }
+    .contact-form button { justify-self:start; padding:12px 22px; border:0; border-radius:999px; background:var(--ink); color:#fff; font:inherit; cursor:pointer; }
+    .contact-form button:hover { background:#3b3d41; }
+    .experience { padding:0 0 3.5rem; border-top:1px solid #e5e5e5; }
+    .experience h2 { margin:40px 0 20px; font-size:clamp(1.75rem,3vw,2.25rem); line-height:1.3; letter-spacing:-.025em; font-weight:500; }
+    .experience-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:48px; }
+    .experience-item { padding-left:20px; border-left:3px solid var(--accent); }
+    .experience-item h3 { margin:0; font-size:1.125rem; font-weight:500; }
+    .experience-item p { margin:2px 0 0; font-size:.96rem; }
+    @media (max-width:700px) { .wrap { width:min(100% - 40px,560px); } header { min-height:84px; } nav { gap:18px; } nav a { font-size:.9rem; } .about { min-height:auto; grid-template-columns:1fr; gap:32px; padding:3rem 0 4rem; } .headshot { grid-row:auto; justify-self:start; width:min(72vw,300px); } .expertise-grid,.experience-grid { grid-template-columns:1fr; gap:28px; } }
+    @media (max-width:420px) { nav { gap:12px; } nav a { font-size:.83rem; } .wordmark-primary { font-size:1.75rem; } .wordmark-secondary { font-size:.62rem; } }
+    @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html" aria-label="Sofiia Strykova — home"><span class="wordmark-primary">SOFIIA</span><span class="wordmark-secondary">STRYKOVA</span></a>
+      <nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="about.html" aria-current="page">About</a><a href="contact.html">Contact</a></nav>
+    </header>
+    <main>
+      <section class="about" aria-labelledby="about-title">
+        <div>
+<h1 id="about-title">Hey there! Thanks for stopping by.</h1>
+          <p>I design complex, high-consideration digital experiences that bring clarity to complexity. Drawing on research, systems thinking, and cross-functional collaboration, I translate ambiguity into meaningful product direction and intuitive customer journeys. I approach design holistically, from defining the right problems to delivering thoughtful solutions that balance user needs with business objectives.</p>
+          <p>My background in linguistics and beauty has shaped a distinctly human-centered perspective on design, grounded in curiosity, empathy, and an appreciation for the nuances of human behaviour. It taught me the value of listening with intention, understanding individual needs, and building trust through thoughtful interactions.</p>
+          <p>Originally from Ukraine, my journey has taken me across the U.S., including New York, before bringing me to Canada, first to Toronto and now Calgary. I’m a lifelong learner with a particular fascination for psychology, language, and what drives human behaviour. I speak Ukrainian, Russian, and English, and I’m currently refining my French.</p>
+          <p>Beyond design, you’ll find me exploring the Rockies, hiking and skiing with my son, or spending time with my Pomeranian.</p>
+        </div>
+        <img class="headshot" src="https://sofiiastrykova.com/sofiia-profile-photo-2026.jpg" width="839" height="1024" alt="Portrait of Sofiia Strykova">
+      </section>
+      <section class="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <div class="experience-grid">
+          <article class="experience-item">
+            <h3>User Experience Designer</h3>
+            <p>Critical Mass Inc. · 2025–Present</p>
+          </article>
+          <article class="experience-item">
+            <h3>Associate User Experience Designer</h3>
+            <p>Critical Mass Inc. · 2023–2025</p>
+          </article>
+        </div>
+      </section>
+      <section class="skills-education" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills &amp; Education</h2>
+        <div class="expertise-grid">
+          <div>
+            <h3 class="section-label">Skills</h3>
+            <ul class="expertise-list">
+              <li><strong>UX strategy &amp; problem framing</strong><span>Aligning user needs with business goals.</span></li>
+              <li><strong>User research &amp; synthesis</strong><span>Turning user insights into clear design direction.</span></li>
+              <li><strong>Information architecture &amp; journey design</strong><span>Creating clear structures and intuitive end-to-end journeys.</span></li>
+              <li><strong>Interaction design &amp; prototyping</strong><span>Turning ideas into intuitive, testable experiences.</span></li>
+              <li><strong>Usability &amp; accessibility</strong><span>Designing and validating experiences that work for more people.</span></li>
+              <li><strong>Cross-functional collaboration &amp; influence</strong><span>Aligning teams around thoughtful design decisions.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="section-label">Education</h3>
+            <ul class="education-list">
+              <li><h3><a href="ideo-u-ai-design-thinking.png" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">AI × Design Thinking</a></h3><p>IDEO U · 2025</p></li>
+              <li><h3><a href="https://designlab.com/certificates/BCe16?utm_source=linkedin&amp;utm_campaign=cert" target="_blank" rel="noopener noreferrer" title="View certificate (opens in a new tab)">UX Academy</a></h3><p>Designlab · 2022</p></li>
+              <li><h3>Honours Bachelor’s Degree in Linguistics</h3><p>Dnipro University of Technology · 2012</p></li>
+            </ul>
+            <h3 class="section-label">Tools</h3>
+            <p>Figma · FigJam · Figma Make · Miro · Notion · Maze · AI design tools</p>
+          </div>
+        </div>
+      </section>
+      <section class="lets-chat" aria-labelledby="lets-chat-title">
+        <h2 id="lets-chat-title">Let’s Chat</h2>
+        <p>Have a project in mind or want to connect? I’d love to hear from you.</p>
+        <div class="chat-primary-actions">
+          <a href="index.html#work">← Work</a>
+          <a href="contact.html">Contact →</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
