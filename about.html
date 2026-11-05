@@ -26,9 +26,9 @@
     h1 { max-width:14ch; margin:0 0 28px; font-size:clamp(2.5rem,4.5vw,3.5rem); line-height:1.1; letter-spacing:-.045em; font-weight:400; }
     p { color:var(--muted); margin:0 0 20px; font-size:1.0625rem; line-height:1.8; }
     .about { min-height:calc(100vh - 104px); display:grid; grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr); gap:72px; align-items:center; padding:4rem 0; }
-    .bio-more-link { display:flex; width:fit-content; align-items:center; gap:10px; margin:4px auto 0; color:var(--accent); font-size:1rem; font-weight:500; text-decoration:none; }
+    .bio-more-link { display:inline-flex; align-items:center; gap:10px; margin-top:4px; color:var(--accent); font-size:1rem; font-weight:500; text-decoration:none; }
     .bio-more-link:hover { text-decoration:underline; text-underline-offset:5px; }
-    .bio-more-arrow { color:var(--accent); transition:transform .2s ease; }
+    .bio-more-arrow { display:grid; width:32px; height:32px; place-items:center; border-radius:50%; background:#f4e59a; color:#111; transition:transform .2s ease; }
     .bio-more-link:hover .bio-more-arrow { transform:translateY(3px); }
     .headshot { display:block; width:100%; max-width:360px; height:auto; aspect-ratio:1; object-fit:cover; object-position:center top; border-radius:50%; justify-self:end; }
     .skills-education { padding:0 0 5rem; border-top:1px solid #e5e5e5; }
