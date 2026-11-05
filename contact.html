@@ -24,14 +24,14 @@
     nav { display:flex; gap:28px; align-items:center; }
     nav a { font-size:1rem; text-decoration:none; }
     nav a:hover { text-decoration:underline; text-decoration-color:var(--accent); }
-    main { min-height:calc(100vh - 190px); padding:5rem 0 6rem; }
+    main { min-height:calc(100vh - 190px); padding:5rem 0 6rem; text-align:center; }
     h1 { max-width:14ch; margin:0 0 16px; font-size:clamp(2.5rem,5vw,4rem); line-height:1.1; letter-spacing:-.045em; font-weight:500; }
     .intro { margin:0 0 28px; color:var(--muted); font-size:1.0625rem; }
-    .contact-form { width:min(100%,680px); display:grid; gap:16px; text-align:left; }
-    .contact-form label { display:grid; gap:6px; color:var(--ink); font-size:.9375rem; }
-    .contact-form input,.contact-form textarea { width:100%; padding:12px 14px; border:1px solid #d8d8d8; border-radius:8px; background:#fff; color:var(--ink); font:inherit; }
+    .contact-form { width:min(100%,680px); margin-inline:auto; display:grid; gap:16px; text-align:center; }
+    .contact-form label { display:grid; gap:6px; color:var(--ink); font-size:.9375rem; text-align:center; }
+    .contact-form input,.contact-form textarea { width:100%; padding:12px 14px; border:1px solid #d8d8d8; border-radius:8px; background:#fff; color:var(--ink); font:inherit; text-align:center; }
     .contact-form textarea { min-height:160px; resize:vertical; }
-    .contact-form button { justify-self:start; padding:12px 22px; border:0; border-radius:999px; background:var(--ink); color:#fff; font:inherit; cursor:pointer; }
+    .contact-form button { justify-self:center; padding:12px 22px; border:0; border-radius:999px; background:var(--ink); color:#fff; font:inherit; cursor:pointer; }
     .contact-form button:hover { background:#3b3d41; }
     footer { padding:24px 0; border-top:1px solid var(--line); font-size:.875rem; color:var(--muted); }
     .footer-row { display:flex; justify-content:space-between; gap:20px; }
