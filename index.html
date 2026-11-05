@@ -188,10 +188,8 @@
     .client-heading-link:hover { text-decoration:none; }
     .client-projects h3,.personal-project h3 { font-family:var(--font-body); font-size:1.125rem; line-height:1.5; letter-spacing:-.01em; font-weight:600; }
     .client-heading-link { font-weight:600; }
-    .project-heading-arrow { display:inline-flex; width:.72em; height:.72em; margin-left:.34em; color:var(--accent); vertical-align:.04em; pointer-events:none; }
-    .project-heading-arrow svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-    .project-external-arrow { display:inline-flex; width:.82em; height:.82em; margin-left:.4em; color:var(--accent); line-height:1; vertical-align:baseline; }
-    .project-external-arrow svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .project-heading-arrow,.project-external-arrow { display:inline-grid; width:1.15em; height:1.15em; margin-left:.4em; place-items:center; border-radius:50%; background:#f4e59a; color:#111; vertical-align:middle; pointer-events:none; }
+    .project-heading-arrow svg,.project-external-arrow svg { display:block; width:56%; height:56%; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 
     /* Preview: subtle, accessible project interaction */
     .client-grid article,.personal-project { border-radius:var(--radius); transition:transform .24s cubic-bezier(.2,.8,.2,1); }
@@ -384,7 +382,7 @@
     @media (max-width:760px) {
       .projects .client-grid article .client-card { width:100%; min-height:0; aspect-ratio:1.9 / 1; padding:0; overflow:hidden; }
       .projects .client-grid .project-cover-link { width:100%; height:100%; }
-      .projects .client-grid .project-cover-link img { width:100%; height:100%; object-fit:cover; }
+      .projects .client-grid .project-cover-link img { width:100%; height:100%; object-fit:contain; }
     }
   </style>
   <link rel="icon" type="image/x-portable-pixmap" sizes="128x128" href="/sofiia-favicon.ppm">
@@ -418,7 +416,7 @@
         <div class="section-head"><h2>Selected Work</h2></div>
         <div class="client-grid">
           <article aria-labelledby="nissan-projects-title">
-            <div class="client-card client-card--nissan"><a class="project-cover-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)"><picture><source media="(max-width:760px)" srcset="nissan-homepage-20261105.svg"><img class="nissan-project-cover" src="nissan-homepage-20261105.svg" alt="Nissan USA 2027 Z homepage with green sports car and offer details"></picture></a></div>
+            <div class="client-card client-card--nissan"><a class="project-cover-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)"><picture><source media="(max-width:760px)" srcset="nissan-car-close-mobile.svg"><img class="nissan-project-cover" src="nissan-car-close.svg" alt="Nissan USA homepage featuring the 2027 Nissan Z"></picture></a></div>
             <div class="client-projects">
               <h3 id="nissan-projects-title"><a class="client-heading-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)">NISSAN USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
               <p>Designing intuitive vehicle discovery and shopping experiences across Nissan’s configurator, payment estimator, e-commerce platform, owner portal, and digital campaigns.</p>
