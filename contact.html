@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Sofiia Strykova, a Calgary-based UX Designer.">
+  <title>Contact Sofiia Strykova | UX Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="sofiia-favicon-clean.svg?v=4">
+  <style>
+    :root { --ink:#111; --muted:#444; --accent:#ff6242; --line:#e5e5e5; --font-body:"Poppins","Century Gothic","Avenir Next",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:var(--font-body); line-height:1.75; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-underline-offset:6px; }
+    a:focus-visible,button:focus-visible { outline:2px solid var(--ink); outline-offset:5px; }
+    .wrap { width:min(1080px,calc(100% - 64px)); margin:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; min-height:104px; gap:24px; border-bottom:1px solid var(--line); }
+    .brand { display:inline-flex; flex-direction:column; gap:.3rem; flex-shrink:0; white-space:nowrap; text-decoration:none; }
+    .wordmark-primary,.wordmark-secondary { color:#000; font-family:Inter,"Helvetica Neue",Arial,sans-serif; }
+    .wordmark-primary { font-size:2rem; font-weight:600; line-height:.85; letter-spacing:-.065em; }
+    .wordmark-secondary { margin-left:.14em; font-size:.72rem; line-height:1; letter-spacing:.46em; }
+    nav { display:flex; gap:28px; align-items:center; }
+    nav a { font-size:1rem; text-decoration:none; }
+    nav a:hover { text-decoration:underline; text-decoration-color:var(--accent); }
+    main { min-height:calc(100vh - 190px); padding:5rem 0 6rem; }
+    h1 { max-width:14ch; margin:0 0 16px; font-size:clamp(2.5rem,5vw,4rem); line-height:1.1; letter-spacing:-.045em; font-weight:500; }
+    .intro { margin:0 0 28px; color:var(--muted); font-size:1.0625rem; }
+    .contact-form { width:min(100%,680px); display:grid; gap:16px; text-align:left; }
+    .contact-form label { display:grid; gap:6px; color:var(--ink); font-size:.9375rem; }
+    .contact-form input,.contact-form textarea { width:100%; padding:12px 14px; border:1px solid #d8d8d8; border-radius:8px; background:#fff; color:var(--ink); font:inherit; }
+    .contact-form textarea { min-height:160px; resize:vertical; }
+    .contact-form button { justify-self:start; padding:12px 22px; border:0; border-radius:999px; background:var(--ink); color:#fff; font:inherit; cursor:pointer; }
+    .contact-form button:hover { background:#3b3d41; }
+    footer { padding:24px 0; border-top:1px solid var(--line); font-size:.875rem; color:var(--muted); }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; }
+    @media(max-width:700px) { .wrap { width:min(100% - 40px,560px); } header { min-height:84px; } nav { gap:18px; } nav a { font-size:.9rem; } main { min-height:calc(100vh - 160px); padding:3.5rem 0 4rem; } }
+    @media(max-width:420px) { nav { gap:12px; } nav a { font-size:.83rem; } .wordmark-primary { font-size:1.75rem; } .wordmark-secondary { font-size:.62rem; } .footer-row { flex-direction:column; gap:8px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html" aria-label="Sofiia Strykova — home"><span class="wordmark-primary">SOFIIA</span><span class="wordmark-secondary">STRYKOVA</span></a>
+      <nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a></nav>
+    </header>
+    <main>
+      <h1>Let’s talk.</h1>
+      <p class="intro">Have a project in mind, a question, or just want to say hi? I’d love to hear from you.</p>
+      <form class="contact-form" id="contact-form">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button type="submit">Send message</button>
+      </form>
+    </main>
+  </div>
+  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Sofiia Strykova</span><a href="index.html">Back to work ↑</a></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const values = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(`Portfolio inquiry from ${values.get('name')}`);
+      const body = encodeURIComponent(`Name: ${values.get('name')}\nEmail: ${values.get('email')}\n\n${values.get('message')}`);
+      window.location.href = `mailto:sofiia.strykova@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
