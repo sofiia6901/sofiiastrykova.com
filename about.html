@@ -40,7 +40,8 @@
     .expertise-list span,.education-list p { display:block; margin:2px 0 0; color:var(--muted); font-size:.96rem; }
     .education-list h3 { margin:0; font-size:1rem; font-weight:500; }
     .education-list a { text-decoration-color:#c8c8c8; }
-    .recognition-quote { width:100%; margin:0 0 40px; padding:28px 32px; border-radius:14px; background:#F5F0E8; }
+    .about-testimonial { position:relative; display:flow-root; clear:both; margin:2rem 0 3rem; }
+    .recognition-quote { width:100%; margin:0; padding:28px 32px; border-radius:14px; background:#F5F0E8; }
     .recognition-quote blockquote { margin:0; }
     .recognition-quote p { margin:0; color:var(--ink); font-size:calc(1.0625rem + 2pt); font-style:italic; line-height:1.8; }
     .recognition-quote cite { color:#444; font-size:.9375rem; font-style:normal; font-weight:500; white-space:nowrap; }
@@ -65,7 +66,7 @@
     .experience-item { padding-left:20px; border-left:3px solid var(--accent); }
     .experience-item h3 { margin:0; font-size:1.125rem; font-weight:500; }
     .experience-item p { margin:2px 0 0; font-size:.96rem; }
-    @media (max-width:700px) { .wrap { width:min(100% - 40px,560px); } header { min-height:84px; } nav { gap:18px; } nav a { font-size:.9rem; } .about { min-height:auto; grid-template-columns:1fr; gap:32px; padding:3rem 0 4rem; } .headshot { grid-row:auto; justify-self:center; width:min(72vw,300px); } .expertise-grid,.experience-grid { grid-template-columns:1fr; gap:28px; } }
+    @media (max-width:700px) { .wrap { width:min(100% - 40px,560px); } header { min-height:84px; } nav { gap:18px; } nav a { font-size:.9rem; } .about { min-height:auto; grid-template-columns:1fr; gap:32px; padding:3rem 0 4rem; } .headshot { grid-row:auto; justify-self:center; width:min(72vw,300px); } .about-testimonial { margin:1rem 0 2rem; } .expertise-grid,.experience-grid { grid-template-columns:1fr; gap:28px; } }
     @media (max-width:420px) { nav { gap:12px; } nav a { font-size:.83rem; } .wordmark-primary { font-size:1.75rem; } .wordmark-secondary { font-size:.62rem; } }
     @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
   </style>
