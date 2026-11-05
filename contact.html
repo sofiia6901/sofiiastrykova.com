@@ -30,13 +30,15 @@
     .contact-form label { display:grid; gap:6px; color:var(--ink); font-size:.9375rem; }
     .contact-form input,.contact-form textarea { width:100%; padding:12px 14px; border:1px solid #d8d8d8; border-radius:8px; background:#fff; color:var(--ink); font:inherit; }
     .contact-form textarea { min-height:160px; resize:vertical; }
-    .contact-form button { justify-self:start; padding:12px 22px; border:0; border-radius:999px; background:var(--ink); color:#fff; font:inherit; cursor:pointer; }
-    .contact-form button:hover { background:#3b3d41; }
+    .contact-form button { justify-self:start; display:inline-flex; align-items:center; gap:12px; padding:0; border:0; background:transparent; color:var(--accent); font:inherit; font-size:1rem; font-weight:500; cursor:pointer; transition:gap .2s ease; }
+    .contact-form button:hover { gap:18px; }
+    .contact-form .cta-arrow { font-size:1.25em; line-height:1; }
     footer { padding:24px 0; border-top:1px solid var(--line); font-size:.875rem; color:var(--muted); }
     .footer-row { display:flex; justify-content:space-between; gap:20px; }
     @media(max-width:700px) { .wrap { width:min(100% - 40px,560px); } header { min-height:84px; } nav { gap:18px; } nav a { font-size:.9rem; } main { min-height:calc(100vh - 160px); padding:3.5rem 0 4rem; } }
     @media(max-width:420px) { nav { gap:12px; } nav a { font-size:.83rem; } .wordmark-primary { font-size:1.75rem; } .wordmark-secondary { font-size:.62rem; } .footer-row { flex-direction:column; gap:8px; } }
   </style>
+  <link rel="icon" type="image/x-portable-pixmap" sizes="128x128" href="/sofiia-favicon.ppm">
   <link rel="icon" type="image/svg+xml" href="/sofiia-favicon.svg">
 </head>
 <body>
@@ -52,7 +54,7 @@
         <label>Name<input name="name" autocomplete="name" required></label>
         <label>Email<input name="email" type="email" autocomplete="email" required></label>
         <label>Message<textarea name="message" required></textarea></label>
-        <button type="submit">Send message</button>
+        <button type="submit">Get in touch <span class="cta-arrow" aria-hidden="true">→</span></button>
       </form>
     </main>
   </div>
