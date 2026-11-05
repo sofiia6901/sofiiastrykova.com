@@ -183,23 +183,13 @@
     .client-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
     .client-card { min-height:190px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; background:var(--card); border-radius:var(--radius); text-decoration:none; transition:background .2s ease; }
     .client-heading-link { text-transform:uppercase; text-decoration:none; }
-    .client-projects h3 { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
-    .project-brand-mark { display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; width:42px; height:28px; color:var(--ink); }
-    .project-brand-mark svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.45; stroke-linecap:round; stroke-linejoin:round; }
-    .project-brand-mark--nissan svg circle { stroke-width:1.7; }
-    .project-brand-mark--nissan svg rect { fill:currentColor; stroke:none; }
-    .project-brand-mark--nissan svg text { fill:var(--paper); stroke:none; font:600 4.8px Arial,sans-serif; letter-spacing:.05px; }
-    .project-brand-mark--infiniti { width:38px; }
-    .project-brand-mark--hilton { width:46px; height:28px; }
-    .project-brand-mark--hilton svg rect { fill:none; stroke-width:1; }
-    .project-brand-mark--hilton svg text { fill:currentColor; stroke:none; font-family:Georgia,serif; letter-spacing:.15px; }
-    .project-brand-mark--hilton svg .hilton-main { font-size:9px; }
-    .project-brand-mark--hilton svg .hilton-sub { font:500 4.8px Arial,sans-serif; letter-spacing:.7px; }
+
     .client-heading-link:hover { text-decoration:none; }
     .client-projects h3 { font-size:1.125rem; line-height:1.5; letter-spacing:-.01em; font-weight:500; }
     .project-heading-arrow { display:inline-flex; width:.72em; height:.72em; margin-left:.34em; color:var(--accent); vertical-align:.04em; pointer-events:none; }
     .project-heading-arrow svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-    .project-external-arrow { display:inline-block; margin-left:.4em; color:var(--accent); font-size:.82em; line-height:1; vertical-align:baseline; }
+    .project-external-arrow { display:inline-flex; width:.82em; height:.82em; margin-left:.4em; color:var(--accent); line-height:1; vertical-align:baseline; }
+    .project-external-arrow svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
     /* Preview: subtle, accessible project interaction */
     .client-grid article,.personal-project { border-radius:var(--radius); transition:transform .24s cubic-bezier(.2,.8,.2,1); }
@@ -417,7 +407,7 @@
           
           <article class="personal-project" aria-labelledby="famq-title">
           <a class="famq-preview-link famq-cover-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/FamQ?fullscreen=1&amp;t=cltfBd4t4RXelNyi-1&amp;code-node-id=0-6" target="_blank" rel="noopener noreferrer" aria-label="Open FamQ in Figma (opens in a new tab)"><img class="famq-board" src="famq-hand-phone.svg" width="1800" height="971" alt="Hand holding a smartphone showing the FamQ family organizer app"></a>
-            <div class="personal-project-copy"><h3 id="famq-title"><a class="famq-preview-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/FamQ?fullscreen=1&amp;t=cltfBd4t4RXelNyi-1&amp;code-node-id=0-6" target="_blank" rel="noopener noreferrer">FAMQ <span class="project-external-arrow" aria-hidden="true">↗</span></a></h3><p>Designing an AI-powered family organizer that reduces mental load by turning schedules, responsibilities, and routines into clear, timely actions.</p><p><strong>User Research, UX Strategy, Information Architecture, UX/UI Design, Prototyping, Usability Testing, AI Design Tools</strong></p></div>
+            <div class="personal-project-copy"><h3 id="famq-title"><a class="famq-preview-link" href="https://www.figma.com/make/rhQa4IyaYuyiIgUJ8MCy7g/FamQ?fullscreen=1&amp;t=cltfBd4t4RXelNyi-1&amp;code-node-id=0-6" target="_blank" rel="noopener noreferrer">FAMQ <span class="project-external-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></a></h3><p>Designing an AI-powered family organizer that reduces mental load by turning schedules, responsibilities, and routines into clear, timely actions.</p><p><strong>User Research, UX Strategy, Information Architecture, UX/UI Design, Prototyping, Usability Testing, AI Design Tools</strong></p></div>
           </article>
         </div>
       </section>
@@ -427,28 +417,28 @@
           <article aria-labelledby="nissan-projects-title">
             <div class="client-card client-card--nissan"><a class="project-cover-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)"><img class="nissan-project-cover" src="nissan-screenshot.svg" alt="Nissan website screen featuring the 2027 Nissan Z"></a></div>
             <div class="client-projects">
-              <h3 id="nissan-projects-title"><span class="project-brand-mark project-brand-mark--nissan" aria-hidden="true"><svg viewBox="0 0 44 28"><circle cx="22" cy="14" r="12"/><rect x="13" y="10.4" width="18" height="4.1" rx="1.2"/><text x="22" y="13.4" text-anchor="middle">NISSAN</text></svg></span><a class="client-heading-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)">NISSAN USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
+              <h3 id="nissan-projects-title"><a class="client-heading-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)">NISSAN USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
               <p>Designing intuitive vehicle discovery and shopping experiences across Nissan’s configurator, payment estimator, e-commerce platform, owner portal, and digital campaigns.</p>
             </div>
           </article>
           <article aria-labelledby="infiniti-projects-title">
             <div class="client-card client-card--infiniti"><a class="project-cover-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)"><img class="infiniti-project-cover" src="infiniti-screenshot.svg" alt="Welcome to INFINITI homepage screen"></a></div>
             <div class="client-projects">
-              <h3 id="infiniti-projects-title"><span class="project-brand-mark project-brand-mark--infiniti" aria-hidden="true"><svg viewBox="0 0 44 28"><path d="M5 23 22 5l17 18M13 23h18M22 7v10M18 22h8"/></svg></span><a class="client-heading-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)">INFINITI USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
+              <h3 id="infiniti-projects-title"><a class="client-heading-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)">INFINITI USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
             <p>Designing premium digital experiences that help customers explore and compare luxury vehicles through Experience MyINFINITI and competitive compare.</p>
             </div>
           </article>
           <article aria-labelledby="hilton-projects-title">
             <div class="client-card client-card--hilton"><a class="project-cover-link" href="https://www.hilton.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hilton Honors (opens in a new tab)"><img class="hilton-project-cover" src="hilton-screenshot.svg" alt="Hilton homepage with booking controls and Honors membership promotion"></a></div>
             <div class="client-projects">
-              <h3 id="hilton-projects-title"><span class="project-brand-mark project-brand-mark--hilton" aria-hidden="true"><svg viewBox="0 0 52 30"><rect x="1" y="1" width="50" height="28"/><text x="26" y="15" text-anchor="middle" class="hilton-main">HILTON</text><text x="26" y="24" text-anchor="middle" class="hilton-sub">HONORS</text></svg></span><a class="client-heading-link" href="https://www.hilton.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hilton Honors (opens in a new tab)">HILTON HONORS</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
+              <h3 id="hilton-projects-title"><a class="client-heading-link" href="https://www.hilton.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hilton Honors (opens in a new tab)">HILTON HONORS</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
               <p>Provided UX considerations for making Hilton Honors benefits easier to compare across Member, Silver, Gold, Diamond, and Diamond Reserve so guests understand each tier’s value.</p>
             </div>
           </article>
           <article aria-labelledby="arf-projects-title">
             <div class="client-card client-card--arf"><a class="project-cover-link" href="https://arf.ab.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit ARF (opens in a new tab)"><img class="arf-project-cover" src="arf-project-cover.svg" alt="ARF homepage showing animals available for adoption"></a></div>
             <div class="client-projects">
-              <h3 id="arf-projects-title"><a class="client-heading-link" href="https://arf.ab.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit ARF (opens in a new tab)">ARF</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
+              <h3 id="arf-projects-title"><a class="client-heading-link" href="https://arf.ab.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit ARF (opens in a new tab)">ANIMAL RESCUE FOUNDATION</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
               <p>I brought my passion for animal welfare to ARF, Alberta’s oldest grassroots rescue foundation, using UX to spotlight its impact and make getting involved easier.</p>
             </div>
           </article>
