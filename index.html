@@ -24,8 +24,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif&family=Inter:wght@400;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="sofiia-favicon-clean.svg?v=4">
-  <link rel="shortcut icon" type="image/svg+xml" href="sofiia-favicon-clean.svg?v=4">
   <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -277,6 +275,10 @@
     .client-card--arf .client-logo { width:140px; }
     .client-market { font-size:.9375rem; line-height:1.6; color:var(--muted); letter-spacing:0; text-align:center; }
     .client-projects { padding:28px 4px 12px; }
+    .work-about-cta { display:flex; justify-content:center; margin:28px auto 0; }
+    .work-about-cta a { display:inline-flex; align-items:center; gap:12px; color:var(--accent); font-size:1rem; font-weight:500; text-decoration:none; transition:gap .2s ease; }
+    .work-about-cta a:hover { gap:18px; }
+    .work-about-cta .cta-arrow { font-size:1.25em; line-height:1; }
     .nda-note { max-width:78ch; margin:32px auto 0; font-size:.875rem; line-height:1.7; color:var(--muted); text-align:center; }
     .client-projects h3 { margin-bottom:16px; }
     .client-projects ul { margin:0; padding-left:22px; color:var(--muted); }
@@ -380,6 +382,7 @@
       .projects .client-grid .project-cover-link img { width:100%; height:100%; object-fit:contain; }
     }
   </style>
+  <link rel="icon" type="image/png" sizes="128x128" href="/sofiia-favicon.png">
 </head>
 <body>
   <div class="wrap">
@@ -438,6 +441,7 @@
           </article>
         </div>
         <p class="nda-note">Selected professional work is presented at a high level to respect client confidentiality. I’m happy to discuss my role and design approach in more detail upon request.</p>
+        <div class="work-about-cta"><a href="about.html">Go to About <span class="cta-arrow" aria-hidden="true">→</span></a></div>
       </section>
       <section class="impact reveal" id="impact" aria-labelledby="impact-title">
         <h2 id="impact-title">Recognition &amp; Mentorship</h2>
