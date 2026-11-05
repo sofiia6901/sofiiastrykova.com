@@ -170,10 +170,10 @@
     .personal-project-copy { padding:28px 4px 12px; }
     .famq-preview-link { display:block; text-decoration:none; }
     .famq-cover-link { display:block; width:100%; aspect-ratio:1 / 1; overflow:hidden; border-radius:var(--radius); background:#194538; transition:box-shadow .24s cubic-bezier(.2,.8,.2,1); }
-    .famq-cover-link .famq-board { width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+    .famq-cover-link .famq-board { width:100%; height:100%; object-fit:cover; object-position:center 42%; transform:scale(1.1); }
     .famq-board { display:block; width:100%; height:100%; object-fit:contain; object-position:center; background:#194538; border-radius:var(--radius); transition:transform .24s cubic-bezier(.2,.8,.2,1); }
     .personal-project:hover .famq-cover-link,.personal-project:focus-within .famq-cover-link { box-shadow:0 12px 26px rgba(24,25,28,.14); }
-    .personal-project:hover .famq-board,.personal-project:focus-within .famq-board { transform:scale(1.05); }
+    .personal-project:hover .famq-board,.personal-project:focus-within .famq-board { transform:scale(1.14); }
     .client-grid article:hover .infiniti-project-cover,.client-grid article:focus-within .infiniti-project-cover { transform:scale(1.24); }
     .famq-preview-link:focus-visible { outline:2px solid var(--accent); outline-offset:4px; border-radius:var(--radius); }
     .personal-project h3 a { text-decoration:inherit; }
@@ -229,7 +229,7 @@
     .client-grid article.scroll-motion .client-logo { transform:scale(1.1); }
     .client-grid article.scroll-motion .nissan-project-cover,.client-grid article.scroll-motion .infiniti-project-cover,
     .client-grid article.scroll-motion .hilton-project-cover,.client-grid article.scroll-motion .arf-project-cover,
-    .famq-cover-link.scroll-motion .famq-board { transform:scale(1.05); }
+    .famq-cover-link.scroll-motion .famq-board { transform:scale(1.14); }
     .headshot.scroll-motion { transform:scale(1.045); box-shadow:0 16px 34px rgba(24,25,28,.12); }
     @media (hover:none),(pointer:coarse) {
       .client-grid article:hover:not(.scroll-motion),.personal-project:hover:not(:focus-within) { transform:none; }
@@ -266,7 +266,7 @@
     .nissan-project-cover { display:block; width:100%; height:100%; object-fit:cover; object-position:center; border-radius:inherit; }
     .client-card--infiniti,.client-card--infiniti:hover { background:transparent; }
     .client-card--infiniti { aspect-ratio:1 / 1; min-height:0; padding:0; overflow:hidden; }
-    .infiniti-project-cover { display:block; width:100%; height:100%; object-fit:cover; object-position:12% center; border-radius:inherit; }
+    .infiniti-project-cover { display:block; width:100%; height:100%; object-fit:cover; object-position:17% center; border-radius:inherit; }
     .client-card--famq { background:#20221f; }
     .famq-logo { color:#fafaf7; font-size:3.75rem; font-weight:600; line-height:1; letter-spacing:-.07em; }
     .famq-logo span { color:#b8d65b; }
@@ -384,7 +384,7 @@
     @media (max-width:760px) {
       .projects .client-grid article .client-card { width:100%; min-height:0; aspect-ratio:1.9 / 1; padding:0; overflow:hidden; }
       .projects .client-grid .project-cover-link { width:100%; height:100%; }
-      .projects .client-grid .project-cover-link img { width:100%; height:100%; object-fit:contain; }
+      .projects .client-grid .project-cover-link img { width:100%; height:100%; object-fit:cover; }
     }
   </style>
   <link rel="icon" type="image/x-portable-pixmap" sizes="128x128" href="/sofiia-favicon.ppm">
@@ -418,14 +418,14 @@
         <div class="section-head"><h2>Selected Work</h2></div>
         <div class="client-grid">
           <article aria-labelledby="nissan-projects-title">
-            <div class="client-card client-card--nissan"><a class="project-cover-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)"><picture><source media="(max-width:760px)" srcset="nissan-car-close-mobile.svg"><img class="nissan-project-cover" src="nissan-car-close.svg" alt="Nissan USA homepage featuring the 2027 Nissan Z"></picture></a></div>
+            <div class="client-card client-card--nissan"><a class="project-cover-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)"><picture><source media="(max-width:760px)" srcset="nissan-homepage-20261105.svg"><img class="nissan-project-cover" src="nissan-homepage-20261105.svg" alt="Nissan USA 2027 Z homepage with green sports car and offer details"></picture></a></div>
             <div class="client-projects">
               <h3 id="nissan-projects-title"><a class="client-heading-link" href="https://www.nissanusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nissan USA (opens in a new tab)">NISSAN USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
               <p>Designing intuitive vehicle discovery and shopping experiences across Nissan’s configurator, payment estimator, e-commerce platform, owner portal, and digital campaigns.</p>
             </div>
           </article>
           <article aria-labelledby="infiniti-projects-title">
-            <div class="client-card client-card--infiniti"><a class="project-cover-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)"><picture><source media="(max-width:760px)" srcset="infiniti-homepage-mobile-20261105.svg"><img class="infiniti-project-cover" src="infiniti-homepage-20261105.svg" alt="INFINITI USA QX65 homepage with comparison details and vehicle"></picture></a></div>
+            <div class="client-card client-card--infiniti"><a class="project-cover-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)"><picture><source media="(max-width:760px)" srcset="infiniti-qx65-20261105.svg"><img class="infiniti-project-cover" src="infiniti-qx65-20261105.svg" alt="INFINITI QX65 comparison page with red vehicle and Lexus comparison details"></picture></a></div>
             <div class="client-projects">
               <h3 id="infiniti-projects-title"><a class="client-heading-link" href="https://www.infinitiusa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit INFINITI USA (opens in a new tab)">INFINITI USA</a><span class="project-heading-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5 4h7v7"/></svg></span></h3>
             <p>Designing premium digital experiences that help customers explore and compare luxury vehicles through Experience MyINFINITI and competitive compare.</p>
